@@ -28,3 +28,12 @@ wget https://github.com/g0ssipcoin/GOSSIP-masternode-autoinstall/raw/master/goss
 -l show gossipcoin.conf
 -m show firewall log
 ```
+
+## Multi Masternode Installation
+
+:TODO
+
+## Multi Masternode control
+
+:TODO
+
