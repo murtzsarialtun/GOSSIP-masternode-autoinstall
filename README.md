@@ -30,9 +30,9 @@ wget https://github.com/g0ssipcoin/GOSSIP-masternode-autoinstall/raw/master/goss
 ```
 
 ## Multi Masternode Installation
-
-:TODO
-
+```
+wget https://raw.githubusercontent.com/murtzsarialtun/GOSSIP-masternode-autoinstall/master/gossip-autoinstall.sh && bash gossip-autoinstall.sh
+```
 ## Multi Masternode control
 
 :TODO
