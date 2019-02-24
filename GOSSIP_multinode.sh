@@ -225,10 +225,12 @@ then
   source ~/.bashrc
   echo ""
 fi
-#if [ ! -f DynamicChain.zip ]
-#then
-#wget https://github.com/murtzsarialtun/Transcendence-Dynamic-Chain/releases/download/1.2.1/DynamicChain.zip
-#fi
+if [ ! -f /opt/gossipcoin-chain.zip ]
+then
+cd /opt
+wget https://github.com/murtzsarialtun/GOSSIP-masternode-autoinstall/releases/download/1.0.0/gossipcoin-chain.zip
+fi
+cd
 echo -e "Gossip nodes currently installed: ${GREEN}${IP4COUNT}${NC}"
 if [ $IP4COUNT = "0" ]
 then
@@ -263,7 +265,7 @@ then
   mkdir -p /root/bin
   mkdir /usr/share/gossipcoin_$ALIAS
   ln -s /usr/share/gossipcoin_$ALIAS /root/.gossipcoin_$ALIAS
-#  unzip DynamicChain.zip -d /usr/share/gossipcoin_$ALIAS >/dev/null 2>&1
+  unzip /opt/gossipcoin-chain.zip -d /usr/share/gossipcoin_$ALIAS >/dev/null 2>&1
   echo '#!/bin/bash' > /usr/bin/gossipcoind_$ALIAS.sh
   ln -s /usr/bin/gossipcoind_$ALIAS.sh /root/bin/
   echo "gossipcoind -daemon -conf=$CONF_DIR/gossipcoin.conf -datadir=$CONF_DIR "'$*' >> /usr/bin/gossipcoind_$ALIAS.sh
@@ -379,7 +381,7 @@ while [  $COUNTER -lt $MNCOUNT ]; do
   mkdir -p /root/bin
   mkdir /usr/share/gossipcoin_$ALIAS
   ln -s /usr/share/gossipcoin_$ALIAS /root/.gossipcoin_$ALIAS
-#  unzip DynamicChain.zip -d /usr/share/gossipcoin_$ALIAS >/dev/null 2>&1
+  unzip /opt/gossipcoin-chain.zip -d /usr/share/gossipcoin_$ALIAS >/dev/null 2>&1
   echo '#!/bin/bash' > /usr/bin/gossipcoind_$ALIAS.sh
   ln -s /usr/bin/gossipcoind_$ALIAS.sh /root/bin/
   echo "gossipcoind -daemon -conf=$CONF_DIR/gossipcoin.conf -datadir=$CONF_DIR "'$*' >> /usr/bin/gossipcoind_$ALIAS.sh
@@ -479,6 +481,6 @@ echo "mnstats"
 fi
 echo ""
 echo "Made by murtzsarialtun"
-echo "Gossip donations: GPN1TfeKBr4CN2b4znigohGf1bLxoxLNVP"
+echo "Gossip donations: GgwxB6uzcG3YqW8xtiw5YJ72L8LE37ziJZ"
 exec bash
 exit
